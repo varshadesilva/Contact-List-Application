@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+
+<?import javafx.scene.control.cell.PropertyValueFactory?>
+<VBox alignment="TOP_CENTER" minHeight="-Infinity" minWidth="-Infinity" prefHeight="620.0" prefWidth="700.0" styleClass="master-vbox" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.EditContactController">
+    <children>
+        <HBox alignment="CENTER_LEFT" minHeight="-Infinity" minWidth="-Infinity" prefHeight="50.0" prefWidth="540.0" spacing="5.0" VBox.vgrow="NEVER">
+
+        </HBox>
+        <GridPane alignment="CENTER" hgap="5" vgap="5">
+
+            <children>
+                <Label text="First Name" GridPane.halignment="RIGHT" GridPane.rowIndex="1">
+
+                </Label>
+                <Label text="Middle Name" GridPane.halignment="RIGHT" GridPane.rowIndex="2">
+
+                </Label>
+                <Label text="Last Name" GridPane.halignment="RIGHT" GridPane.rowIndex="3">
+
+                </Label>
+
+                <TextField fx:id="editfirstNameField" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                <TextField fx:id="editmiddleNameField" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                <TextField fx:id="editlastNameField" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+
+            </children>
+
+
+
+
+            <TableView fx:id="addresstableView" GridPane.columnIndex="1" GridPane.rowIndex="5">
+                <columns>
+                    <TableColumn text="Address Type">
+                        <cellValueFactory><PropertyValueFactory property="addresstype" />
+                        </cellValueFactory>
+                    </TableColumn>
+                    <TableColumn text="Street Address">
+                        <cellValueFactory><PropertyValueFactory property="streetaddress" />
+                        </cellValueFactory>
+                    </TableColumn>
+                    <TableColumn text="City">
+                        <cellValueFactory><PropertyValueFactory property="city" />
+                        </cellValueFactory>
+                    </TableColumn>
+                    <TableColumn text="State">
+                        <cellValueFactory><PropertyValueFactory property="state" />
+                        </cellValueFactory>
+                    </TableColumn>
+                    <TableColumn text="Zip">
+                        <cellValueFactory><PropertyValueFactory property="zip" />
+                        </cellValueFactory>
+                    </TableColumn>
+                </columns>
+            </TableView>
+            <HBox spacing="10" alignment="bottom_right" GridPane.columnIndex="1"
+                  GridPane.rowIndex="6">
+                <TextField fx:id="addressTypeField" promptText="Address type"
+                           prefWidth="90" />
+                <TextField fx:id="streetAddressField" promptText="Steet Address"
+                           prefWidth="90"/>
+                <TextField fx:id="cityField" promptText="City"
+                           prefWidth="90"/>
+                <TextField fx:id="stateField" promptText="State"
+                           prefWidth="90"/>
+                <TextField fx:id="zipField" promptText="Zip"
+                           prefWidth="90"/>
+               <Button onAction="#editAddressAdd" text="Add"/>
+            </HBox>
+
+
+            <TableView fx:id="phonetableView" GridPane.columnIndex="1" GridPane.rowIndex="8">
+                <columns>
+                    <TableColumn text="Phone Type">
+                        <cellValueFactory><PropertyValueFactory property="phoneType" />
+                        </cellValueFactory>
+                    </TableColumn>
+                    <TableColumn text="Area code">
+                        <cellValueFactory><PropertyValueFactory property="areaCode" />
+                        </cellValueFactory>
+                    </TableColumn>
+                    <TableColumn text="Phone number">
+                        <cellValueFactory><PropertyValueFactory property="phoneNum" />
+                        </cellValueFactory>
+                    </TableColumn>
+                </columns>
+                <items>
+
+                </items>
+
+            </TableView>
+            <HBox spacing="10" alignment="bottom_right" GridPane.columnIndex="1"
+                  GridPane.rowIndex="9">
+                <TextField fx:id="phoneTypeField" promptText="Phone type"
+                           prefWidth="90"/>
+                <TextField fx:id="areaCodeField" promptText="Area code"
+                           prefWidth="90"/>
+                <TextField fx:id="phoneNumberField" promptText="Phone number"
+                           prefWidth="90"/>
+                <Button onAction="#editPhoneAdd" text="Add"/>
+            </HBox>
+
+
+            <TableView fx:id="datetableView" GridPane.columnIndex="1" GridPane.rowIndex="11">
+                <columns>
+                    <TableColumn text="Date Type">
+                        <cellValueFactory><PropertyValueFactory property="dateType" />
+                        </cellValueFactory>
+                    </TableColumn>
+                    <TableColumn text="Date">
+                        <cellValueFactory><PropertyValueFactory property="date" />
+                        </cellValueFactory>
+                    </TableColumn>
+                </columns>
+            </TableView>
+            <HBox spacing="10" alignment="bottom_right" GridPane.columnIndex="1"
+                  GridPane.rowIndex="12">
+                <TextField fx:id="dateTypeField" promptText="Date type"
+                           prefWidth="90"/>
+                <DatePicker fx:id="datepicker" promptText="Date"  />
+                <Button onAction="#editDateAdd" text="Add"/>
+            </HBox>
+
+            <padding>
+                <Insets left="20.0" right="20.0" />
+            </padding>
+        </GridPane>
+    </children>
+</VBox>
+

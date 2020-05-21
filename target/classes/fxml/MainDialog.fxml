@@ -1,0 +1,257 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.control.cell.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<VBox fx:id="mainVBox" minHeight="-Infinity" minWidth="-Infinity" prefHeight="602.0" prefWidth="702.0" styleClass="master-vbox" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+    <children>
+        <HBox alignment="CENTER_LEFT" maxHeight="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="60.0" prefWidth="700.0" styleClass="top-panel" VBox.vgrow="NEVER">
+            <children>
+                <Label text="Contact List">
+                    <font>
+                        <Font name="Times New Roman bold" size="20" />
+                    </font>
+                </Label>
+            </children>
+            <VBox.margin>
+                <Insets />
+            </VBox.margin>
+            <padding>
+                <Insets bottom="5.0" left="10.0" right="10.0" top="5.0" />
+            </padding>
+        </HBox>
+        <SplitPane dividerPositions="0.4" minHeight="-Infinity" minWidth="-Infinity" prefHeight="505.0" prefWidth="700.0" VBox.vgrow="ALWAYS">
+            <items>
+                <VBox alignment="CENTER" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="485.0" prefWidth="272.0" styleClass="left-vbox">
+                    <children>
+                        <TextField fx:id="searchField" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="40.0" prefWidth="252.0" promptText="Search" styleClass="search-field">
+                            <VBox.margin>
+                                <Insets bottom="5.0" left="10.0" right="10.0" top="10.0" />
+                            </VBox.margin>
+                        </TextField>
+                        <Button fx:id="searchButton" alignment="CENTER_LEFT" onAction="#showSearchResults" text="Search">
+                        </Button>
+                        <TableView fx:id="tableView" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMouseClicked="#showContactDetails" prefHeight="410.0" prefWidth="252.0" VBox.vgrow="ALWAYS">
+                            <columns>
+                                <TableColumn fx:id="firstColumn" minWidth="-Infinity" prefWidth="85" resizable="false" text="First Name" />
+                                <TableColumn fx:id="middleColumn" minWidth="-Infinity" prefWidth="87" resizable="false" text="Middle Name" />
+                                <TableColumn fx:id="lastColumn" minWidth="-Infinity" prefWidth="87" resizable="false" text="Last Name" />
+                            </columns>
+                            <columnResizePolicy>
+                                <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                            </columnResizePolicy>
+                            <VBox.margin>
+                                <Insets bottom="10.0" left="10.0" right="10.0" top="5.0" />
+                            </VBox.margin>
+                        </TableView>
+                    </children>
+                </VBox>
+                <VBox alignment="CENTER" minHeight="-Infinity" minWidth="-Infinity" prefHeight="485.0" prefWidth="420.0">
+                    <children>
+                     <!--   <HBox alignment="CENTER_LEFT" minHeight="-Infinity" minWidth="-Infinity" prefHeight="20.0" prefWidth="420.0" VBox.vgrow="NEVER">
+
+                        </HBox>-->
+                        <HBox alignment="CENTER" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="420.0" VBox.vgrow="ALWAYS">
+                            <children>
+                                <GridPane alignment="CENTER_LEFT" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="250.0" styleClass="grid-panel" HBox.hgrow="ALWAYS" VBox.vgrow="ALWAYS">
+                                    <columnConstraints>
+                                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="95.0" />
+                                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="190.0" />
+                                    </columnConstraints>
+                                    <rowConstraints>
+                                        <RowConstraints minHeight="-Infinity" prefHeight="25.0" vgrow="SOMETIMES" />
+                                        <RowConstraints minHeight="-Infinity" prefHeight="25.0" vgrow="SOMETIMES" />
+                                        <RowConstraints minHeight="-Infinity" prefHeight="25.0" vgrow="SOMETIMES" />
+                                        <RowConstraints minHeight="-Infinity" prefHeight="25.0" vgrow="SOMETIMES" />
+                                    </rowConstraints>
+                                    <VBox.margin>
+                                        <Insets />
+                                    </VBox.margin>
+                                    <children>
+                                        <Label styleClass="left" text="First Name" GridPane.halignment="RIGHT" GridPane.rowIndex="1">
+                                            <GridPane.margin>
+                                                <Insets right="10.0" />
+                                            </GridPane.margin>
+                                        </Label>
+                                        <TextField fx:id="fNameField" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+
+                                        <Label styleClass="left" text="Middle Name" GridPane.halignment="RIGHT" GridPane.rowIndex="2">
+                                            <GridPane.margin>
+                                                <Insets right="10.0" />
+                                            </GridPane.margin>
+                                        </Label>
+                                        <TextField fx:id="mNameField" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+
+                                        <Label text="Last Name" GridPane.halignment="RIGHT" GridPane.rowIndex="3">
+                                            <GridPane.margin>
+                                                <Insets right="10.0" />
+                                            </GridPane.margin>
+                                        </Label>
+                                        <TextField fx:id="lNameField" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                                    </children>
+                                    <HBox.margin>
+                                        <Insets />
+                                    </HBox.margin>
+                                </GridPane>
+                                <VBox alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="120.0" prefWidth="120.0" HBox.hgrow="NEVER">
+                                    <children>
+
+                                    </children>
+                                    <HBox.margin>
+                                        <Insets left="10.0" />
+                                    </HBox.margin>
+                                </VBox>
+                            </children>
+                            <padding>
+                                <Insets right="10.0" />
+                            </padding>
+                        </HBox>
+
+                        <HBox minHeight="-Infinity" minWidth="-Infinity" prefHeight="50.0" prefWidth="420.0" VBox.vgrow="ALWAYS">
+                            <children>
+                                <GridPane alignment="CENTER_LEFT" minHeight="-Infinity" minWidth="-Infinity" prefHeight="70.0" prefWidth="410.0" styleClass="grid-panel" HBox.hgrow="ALWAYS" VBox.vgrow="ALWAYS">
+                                    <columnConstraints>
+                                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="89.33333333333333" minWidth="-Infinity" prefWidth="5.333338816960648" />
+                                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="406.9999950528145" minWidth="10.0" prefWidth="404.9999945163727" />
+                                    </columnConstraints>
+                                    <rowConstraints>
+                                        <RowConstraints maxHeight="20.333333333333332" minHeight="-Infinity" prefHeight="14.333333333333332" vgrow="SOMETIMES" />
+                              <RowConstraints maxHeight="86.33333333333333" minHeight="80.0" prefHeight="86.33333333333333" />
+                                    </rowConstraints>
+                                    <VBox.margin>
+                                        <Insets />
+                                    </VBox.margin>
+
+                                    <TableView fx:id="showaddresstableView" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                        <columns>
+                                            <TableColumn prefWidth="95.99999761581421" text="Address Type">
+                                                <cellValueFactory><PropertyValueFactory property="addresstype" />
+                                                </cellValueFactory>
+                                            </TableColumn>
+                                            <TableColumn prefWidth="98.33332061767578" text="Street Address">
+                                                <cellValueFactory><PropertyValueFactory property="streetaddress" />
+                                                </cellValueFactory>
+                                            </TableColumn>
+                                            <TableColumn prefWidth="63.00001525878906" text="City">
+                                                <cellValueFactory><PropertyValueFactory property="city" />
+                                                </cellValueFactory>
+                                            </TableColumn>
+                                            <TableColumn prefWidth="65.0" text="State">
+                                                <cellValueFactory><PropertyValueFactory property="state" />
+                                                </cellValueFactory>
+                                            </TableColumn>
+                                            <TableColumn text="Zip">
+                                                <cellValueFactory><PropertyValueFactory property="zip" />
+                                                </cellValueFactory>
+                                            </TableColumn>
+                                        </columns>
+                                    </TableView>
+                           <HBox.margin>
+                              <Insets />
+                           </HBox.margin>
+
+
+                                </GridPane>
+                            </children>
+                            <padding>
+                                <Insets right="10.0" />
+                            </padding>
+                        </HBox>
+
+                        <HBox minHeight="-Infinity" minWidth="-Infinity" prefHeight="50.0" prefWidth="420.0" VBox.vgrow="ALWAYS">
+                            <children>
+                                <GridPane alignment="CENTER_LEFT" minHeight="-Infinity" minWidth="-Infinity" prefHeight="70.0" prefWidth="410.0" styleClass="grid-panel" HBox.hgrow="ALWAYS" VBox.vgrow="ALWAYS">
+
+                                    <TableView fx:id="showphonetableView" prefHeight="63.0" prefWidth="359.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                        <columns>
+                                            <TableColumn prefWidth="124.99997675418854" text="Phone Type">
+                                                <cellValueFactory><PropertyValueFactory property="phoneType" />
+                                                </cellValueFactory>
+                                            </TableColumn>
+                                            <TableColumn prefWidth="144.99999237060547" text="Area code">
+                                                <cellValueFactory><PropertyValueFactory property="areaCode" />
+                                                </cellValueFactory>
+                                            </TableColumn>
+                                            <TableColumn minWidth="1.0" prefWidth="133.33331298828125" text="Phone number">
+                                                <cellValueFactory><PropertyValueFactory property="phoneNum" />
+                                                </cellValueFactory>
+                                            </TableColumn>
+                                        </columns>
+
+                                    </TableView>
+
+
+
+
+                                    <columnConstraints>
+                                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="90.33333333333333" minWidth="-Infinity" prefWidth="8.333336194356278" />
+                                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="411.9999974966049" minWidth="10.0" prefWidth="403.99999713897705" />
+                                    </columnConstraints>
+                                    <rowConstraints>
+                                        <RowConstraints maxHeight="45.33333333333333" minHeight="-Infinity" prefHeight="18.333333333333332" vgrow="SOMETIMES" />
+                                        <RowConstraints maxHeight="82.33333333333333" minHeight="-Infinity" prefHeight="82.33333333333333" vgrow="SOMETIMES" />
+                                    </rowConstraints>
+                                </GridPane>
+                            </children>
+                            <padding>
+                                <Insets right="10.0" />
+                            </padding>
+                        </HBox>
+                        
+                        <HBox minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="420.0" VBox.vgrow="ALWAYS">
+                            <children>
+                                <GridPane alignment="CENTER_LEFT" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="410.0" styleClass="grid-panel" HBox.hgrow="ALWAYS" VBox.vgrow="ALWAYS">
+                                    <columnConstraints>
+                                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="90.33333333333333" minWidth="-Infinity" prefWidth="10.33333571751912" />
+                                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="401.9999976158142" minWidth="10.0" prefWidth="401.9999976158142" />
+                                    </columnConstraints>
+                                    <rowConstraints>
+                                        <RowConstraints maxHeight="32.33333333333333" minHeight="-Infinity" prefHeight="30.333333333333336" vgrow="SOMETIMES" />
+                                        <RowConstraints maxHeight="82.33333333333331" minHeight="-Infinity" prefHeight="80.0" vgrow="SOMETIMES" />
+                                        <RowConstraints maxHeight="28.33333333333333" minHeight="-Infinity" prefHeight="10.666666666666671" vgrow="SOMETIMES" />
+                                        <RowConstraints minHeight="-Infinity" prefHeight="25.0" vgrow="SOMETIMES" />
+                                    </rowConstraints>
+
+                                    <TableView fx:id="showdatetableView" prefHeight="45.0" prefWidth="403.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                        <columns>
+                                            <TableColumn prefWidth="185.999969124794" text="Date Type">
+                                                <cellValueFactory><PropertyValueFactory property="dateType" />
+                                                </cellValueFactory>
+                                            </TableColumn>
+                                            <TableColumn minWidth="0.0" prefWidth="215.3333740234375" text="Date">
+                                                <cellValueFactory><PropertyValueFactory property="date" />
+                                                </cellValueFactory>
+                                            </TableColumn>
+                                        </columns>
+                                    </TableView>
+
+
+                                </GridPane>
+                            </children>
+                            <padding>
+                                <Insets right="10.0" />
+                                <Insets right="10.0" />
+                            </padding>
+                        </HBox>
+                        <HBox alignment="CENTER" maxHeight="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="40.0" prefWidth="420.0" spacing="15.0" styleClass="button-panel" VBox.vgrow="NEVER">
+                            <children>
+                                <Button alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#handleNew" prefHeight="30.0" prefWidth="100.0" styleClass="operation-buttons" text="New" HBox.hgrow="NEVER">
+                                    </Button>
+                                <Button fx:id="editButton" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#showEditContact" prefHeight="30.0" prefWidth="100.0" styleClass="operation-buttons" text="Edit" HBox.hgrow="NEVER">
+                                    </Button>
+                                <Button fx:id="deleteButton" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#deleteContact" prefHeight="30.0" prefWidth="100.0" styleClass="operation-buttons" text="Delete" HBox.hgrow="NEVER">
+                                    </Button>
+                            </children>
+                            <VBox.margin>
+                                <Insets left="10.0" right="10.0" />
+                            </VBox.margin>
+                        </HBox>
+                    </children>
+                </VBox>
+            </items>
+        </SplitPane>
+    </children>
+</VBox>
